@@ -22,15 +22,17 @@ export default class RuleGroup extends React.Component {
     const level = getLevel(this.props.id);
     return (
       <div className={`ruleGroup ${classNames.ruleGroup}`}>
-        {React.createElement(controls.combinatorSelector, {
-          options: combinators,
-          value: combinator,
-          title: translations.combinators.title,
-          className: `ruleGroup-combinators ${classNames.combinators}`,
-          handleOnChange: this.onCombinatorChange,
-          rules: rules,
-          level: level
-        })}
+        <div className={`bp3-select `}>
+          {React.createElement(controls.combinatorSelector, {
+            options: combinators,
+            value: combinator,
+            title: translations.combinators.title,
+            className: `ruleGroup-combinators ${classNames.combinators}`,
+            handleOnChange: this.onCombinatorChange,
+            rules: rules,
+            level: level
+          })}
+        </div>
         {React.createElement(controls.addRuleAction, {
           label: translations.addRule.label,
           title: translations.addRule.title,
